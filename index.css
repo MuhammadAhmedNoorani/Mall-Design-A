@@ -1858,26 +1858,54 @@ img {
     .announcement-bar {
         display: none;
     }
+    .header-container {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 12px 16px;
+    }
     .search-bar-container {
-        display: none; /* Relies on mobile search button/drawer trigger */
+        display: block;
+        width: 100%;
+        order: 3;
+        max-width: 100%;
+    }
+    .search-category-select {
+        display: none;
+    }
+    .search-input {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+    .search-btn {
+        padding: 0 16px;
     }
     .nav-bar {
-        display: none; /* Handled by mobile responsive sidebar */
+        display: none;
     }
     .header-actions {
         gap: 12px;
     }
-    .header-container {
-        padding: 12px 16px;
+    .logo {
+        font-size: 1.4rem;
+    }
+    .action-btn {
+        font-size: 0.7rem;
+        padding: 2px 4px;
+    }
+    .action-btn svg {
+        width: 20px;
+        height: 20px;
     }
     .section-title {
         font-size: 1.5rem;
     }
     .floor-product-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
     .trust-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
     }
     .reviews-grid {
         column-count: 1;
@@ -1892,6 +1920,21 @@ img {
         display: block;
     }
     body {
-        padding-bottom: 64px; /* Space for bottom nav */
+        padding-bottom: 64px;
+    }
+    .drawer {
+        width: 100%;
+        right: -100%;
+    }
+    .modal-container {
+        padding: 20px;
+        width: 95%;
+    }
+    .modal-content-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .modal-gallery {
+        height: 240px;
     }
 }
