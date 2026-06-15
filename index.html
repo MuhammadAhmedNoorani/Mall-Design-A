@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GRAND ATRIUM | Premium Digital Shopping Mall</title>
+    <meta name="description" content="Discover premium collections across fashion, electronics, home decor, beauty, and food. Experience high-end marketplace department floors. Everything under one roof.">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar" id="announcement-bar">
+        <div class="announcement-items">
+            <div class="announcement-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"/></svg>
+                <span>Free Delivery Above $50</span>
+            </div>
+            <div class="announcement-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5"/></svg>
+                <span>Easy Returns within 30 days</span>
+            </div>
+            <div class="announcement-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <span>100% Secure Payments</span>
+            </div>
+        </div>
+        <div>
+            <span>Language: EN | USD</span>
+        </div>
+    </div>
+
+    <!-- Sticky Main Header -->
+    <header class="main-header" id="main-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <a href="#" class="logo" id="header-logo">
+                ATRIUM<span>MALL</span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="search-bar-container" id="search-bar-container">
+                <form class="search-form" onsubmit="event.preventDefault();">
+                    <select class="search-category-select" id="search-cat">
+                        <option value="all">All Departments</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="home">Home & Living</option>
+                        <option value="beauty">Beauty & Personal Care</option>
+                    </select>
+                    <input type="text" class="search-input" id="search-query" placeholder="Search brands, departments, boutique collections...">
+                    <button type="submit" class="search-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Actions Header -->
+            <div class="header-actions" id="header-actions">
+                <button class="action-btn" id="btn-account">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    Account
+                </button>
+                <button class="action-btn" id="btn-wishlist" onclick="showToast('Wishlist feature is loading...')">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                    Wishlist
+                </button>
+                <button class="action-btn" id="btn-cart">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                    Cart
+                    <span class="badge" id="cart-count-badge" style="display: none;">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Navigation Mega Menu -->
+        <nav class="nav-bar">
+            <div class="nav-container">
+                <ul class="nav-categories">
+                    <li class="nav-item">
+                        <span class="nav-link">
+                            Fashion
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="12" height="12"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </span>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>Women's Fashion</h4>
+                                <ul>
+                                    <li><a href="#">Dresses & Jumpsuits</a></li>
+                                    <li><a href="#">Coats & Jackets</a></li>
+                                    <li><a href="#">Knitwear & Sweaters</a></li>
+                                    <li><a href="#">Handbags & Purses</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Men's Fashion</h4>
+                                <ul>
+                                    <li><a href="#">Jackets & Suits</a></li>
+                                    <li><a href="#">Shirts & T-shirts</a></li>
+                                    <li><a href="#">Activewear & Hoodies</a></li>
+                                    <li><a href="#">Shoes & Sneakers</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Featured Brands</h4>
+                                <ul>
+                                    <li><a href="#">Zalando Premium</a></li>
+                                    <li><a href="#">Nike Sportswear</a></li>
+                                    <li><a href="#">Gucci Luxury</a></li>
+                                    <li><a href="#">Ray-Ban Optical</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-promo-card">
+                                    <div>
+                                        <h3>Fashion Week</h3>
+                                        <p>Up to 30% off high street collections</p>
+                                    </div>
+                                    <span class="mega-promo-btn">Explore</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link">
+                            Electronics
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="12" height="12"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </span>
+                        <div class="mega-menu">
+                            <div class="mega-col">
+                                <h4>Audio & Visual</h4>
+                                <ul>
+                                    <li><a href="#">Headphones & Earbuds</a></li>
+                                    <li><a href="#">Home Cinema TVs</a></li>
+                                    <li><a href="#">Bluetooth Speakers</a></li>
+                                    <li><a href="#">Gaming Consoles</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Computers & Phones</h4>
+                                <ul>
+                                    <li><a href="#">Laptops & Notebooks</a></li>
+                                    <li><a href="#">Smartphones & Tablets</a></li>
+                                    <li><a href="#">Monitors & Peripherals</a></li>
+                                    <li><a href="#">Accessories & Bags</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Smart Devices</h4>
+                                <ul>
+                                    <li><a href="#">Smart Home Hubs</a></li>
+                                    <li><a href="#">Security Cameras</a></li>
+                                    <li><a href="#">Robot Vacuums</a></li>
+                                    <li><a href="#">Fitness Trackers</a></li>
+                                </ul>
+                            </div>
+                            <div class="mega-col">
+                                <div class="mega-promo-card" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+                                    <div>
+                                        <h3>Tech Festival</h3>
+                                        <p>Save Big on Smart Devices</p>
+                                    </div>
+                                    <span class="mega-promo-btn">View Deals</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#home-floor" class="nav-link">Home & Living</a></li>
+                    <li class="nav-item"><a href="#dept-section" class="nav-link">Beauty Hub</a></li>
+                    <li class="nav-item"><a href="#dept-section" class="nav-link">Sports</a></li>
+                    <li class="nav-item"><a href="#dept-section" class="nav-link">Kids Zone</a></li>
+                </ul>
+                <div class="nav-extra">
+                    <a href="#deals-section" class="nav-extra-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        Department Directory
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero-section">
+        <div class="hero-grid">
+            <div class="hero-main-banner" onclick="showToast('Redirecting to Autumn & Winter Season Launch...')">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1200&auto=format&fit=crop&q=80" alt="Main Luxury Mall Promotion" class="hero-img-bg">
+                <div class="hero-overlay">
+                    <span class="hero-badge">NEW ARRIVALS</span>
+                    <h1>Autumn Season Launch</h1>
+                    <p>Experience luxurious apparel, boutique designs and department specials handcrafted for modern lifestyles.</p>
+                    <span class="btn-premium">
+                        Explore Floors
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+            </div>
+            <div class="hero-side-container">
+                <div class="hero-side-card" onclick="showToast('Opening Tech Floor Specials...')">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=80" alt="Gaming & Tech Fest" class="hero-img-bg">
+                    <div class="hero-side-overlay">
+                        <h3>Tech World</h3>
+                        <p>OLED Screens, gaming mechanical switches, premium audio</p>
+                        <span class="hero-side-link">Browse Tech Floors &rarr;</span>
+                    </div>
+                </div>
+                <div class="hero-side-card" onclick="showToast('Opening Luxury Living Special Banners...')">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&auto=format&fit=crop&q=80" alt="Home Decor" class="hero-img-bg">
+                    <div class="hero-side-overlay">
+                        <h3>Luxury Living</h3>
+                        <p>Elevate spaces with boutique ceramic designs & floor lamps</p>
+                        <span class="hero-side-link">View Collection &rarr;</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop By Department (Mall Floor Directories) -->
+    <section class="section-container" id="dept-section">
+        <div class="section-header">
+            <div class="section-title-wrapper">
+                <span class="section-label">DIRECTORY</span>
+                <h2 class="section-title">Shop by Department</h2>
+            </div>
+            <a href="#" class="section-btn-link" onclick="event.preventDefault(); showToast('Loading complete mall floor directory...')">
+                Interactive Map
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+
+        <div class="dept-grid">
+            <!-- Department 1 -->
+            <div class="dept-card" onclick="document.getElementById('fashion-floor').scrollIntoView();">
+                <div class="dept-img-container">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&auto=format&fit=crop&q=80" alt="Fashion Avenue" class="dept-img">
+                </div>
+                <div class="dept-info">
+                    <div>
+                        <h3 class="dept-name">Fashion Avenue</h3>
+                        <span class="dept-count">12k+ items</span>
+                    </div>
+                    <div class="dept-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Department 2 -->
+            <div class="dept-card" onclick="document.getElementById('electronics-floor').scrollIntoView();">
+                <div class="dept-img-container">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=600&auto=format&fit=crop&q=80" alt="Tech World" class="dept-img">
+                </div>
+                <div class="dept-info">
+                    <div>
+                        <h3 class="dept-name">Tech World</h3>
+                        <span class="dept-count">8.5k+ items</span>
+                    </div>
+                    <div class="dept-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Department 3 -->
+            <div class="dept-card" onclick="document.getElementById('home-floor').scrollIntoView();">
+                <div class="dept-img-container">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&auto=format&fit=crop&q=80" alt="Home Living" class="dept-img">
+                </div>
+                <div class="dept-info">
+                    <div>
+                        <h3 class="dept-name">Home Living</h3>
+                        <span class="dept-count">9.2k+ items</span>
+                    </div>
+                    <div class="dept-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+            <!-- Department 4 -->
+            <div class="dept-card" onclick="showToast('Department Floor coming soon!')">
+                <div class="dept-img-container">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&auto=format&fit=crop&q=80" alt="Beauty Hub" class="dept-img">
+                </div>
+                <div class="dept-info">
+                    <div>
+                        <h3 class="dept-name">Beauty Hub</h3>
+                        <span class="dept-count">4.8k+ items</span>
+                    </div>
+                    <div class="dept-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Deals Zone -->
+    <section class="section-container" id="deals-section">
+        <div class="section-header">
+            <div class="deals-header">
+                <div class="section-title-wrapper">
+                    <span class="section-label">LIMITED TIME ONLY</span>
+                    <h2 class="section-title">Flash Deals Zone</h2>
+                </div>
+                <div class="deals-timer">
+                    <span class="timer-label">Ends in:</span>
+                    <span class="timer-digits" id="timer-value">04:59:59</span>
+                </div>
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <button class="qty-btn" onclick="scrollCarousel('deals-carousel', 'prev')">&lt;</button>
+                <button class="qty-btn" onclick="scrollCarousel('deals-carousel', 'next')">&gt;</button>
+            </div>
+        </div>
+
+        <div class="carousel-outer">
+            <div class="carousel-container" id="deals-carousel">
+                <!-- Javascript will load deals dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor 1: Electronics -->
+    <section class="floor-section" id="electronics-floor">
+        <div class="section-container">
+            <div class="floor-grid">
+                <div class="floor-banner-card">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=80" alt="Tech Floor Banner" class="floor-banner-bg">
+                    <div class="floor-banner-overlay electronics-overlay">
+                        <div>
+                            <span class="floor-num">FLOOR 01</span>
+                            <h2>Tech World</h2>
+                        </div>
+                        <div>
+                            <div class="floor-mini-tags">
+                                <span class="floor-mini-tag">TVs & Audio</span>
+                                <span class="floor-mini-tag">Laptops</span>
+                                <span class="floor-mini-tag">Smart Home</span>
+                            </div>
+                            <span class="btn-premium" style="width: 100%; justify-content: center; background-color: var(--accent); color: var(--secondary);" onclick="showToast('Opening Tech floor specials...')">
+                                Floor Specials
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="floor-products-layout">
+                    <div class="floor-tabs">
+                        <span class="floor-tab active">Trending Electronics</span>
+                        <span class="floor-tab" onclick="showToast('Loading Smart Home category...')">Smart Home</span>
+                        <span class="floor-tab" onclick="showToast('Loading Audio category...')">Audio</span>
+                    </div>
+                    <div class="floor-product-grid" id="electronics-grid">
+                        <!-- Loaded via Javascript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor 2: Fashion Avenue -->
+    <section class="floor-section" id="fashion-floor" style="background-color: var(--bg-main);">
+        <div class="section-container">
+            <div class="floor-grid">
+                <div class="floor-banner-card">
+                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&auto=format&fit=crop&q=80" alt="Fashion Floor Banner" class="floor-banner-bg">
+                    <div class="floor-banner-overlay fashion-overlay">
+                        <div>
+                            <span class="floor-num">FLOOR 02</span>
+                            <h2>Fashion Avenue</h2>
+                        </div>
+                        <div>
+                            <div class="floor-mini-tags">
+                                <span class="floor-mini-tag">Winter Coats</span>
+                                <span class="floor-mini-tag">Luxury Handbags</span>
+                                <span class="floor-mini-tag">Activewear</span>
+                            </div>
+                            <span class="btn-premium" style="width: 100%; justify-content: center; background-color: var(--accent); color: var(--secondary);" onclick="showToast('Opening Fashion floor specials...')">
+                                Season Specials
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="floor-products-layout">
+                    <div class="floor-tabs">
+                        <span class="floor-tab active">New In Fashion</span>
+                        <span class="floor-tab" onclick="showToast('Loading Outerwear products...')">Outerwear</span>
+                        <span class="floor-tab" onclick="showToast('Loading Bags & Shoes...')">Bags & Shoes</span>
+                    </div>
+                    <div class="floor-product-grid" id="fashion-grid">
+                        <!-- Loaded via Javascript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floor 3: Home Living -->
+    <section class="floor-section" id="home-floor">
+        <div class="section-container">
+            <div class="floor-grid">
+                <div class="floor-banner-card">
+                    <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&auto=format&fit=crop&q=80" alt="Home Decor Floor Banner" class="floor-banner-bg">
+                    <div class="floor-banner-overlay home-overlay">
+                        <div>
+                            <span class="floor-num">FLOOR 03</span>
+                            <h2>Home Living</h2>
+                        </div>
+                        <div>
+                            <div class="floor-mini-tags">
+                                <span class="floor-mini-tag">Armchairs</span>
+                                <span class="floor-mini-tag">Vases</span>
+                                <span class="floor-mini-tag">Lighting</span>
+                            </div>
+                            <span class="btn-premium" style="width: 100%; justify-content: center; background-color: var(--accent); color: var(--secondary);" onclick="showToast('Opening Home & Interior collection floors...')">
+                                Interior Specials
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="floor-products-layout">
+                    <div class="floor-tabs">
+                        <span class="floor-tab active">Interior Collection</span>
+                        <span class="floor-tab" onclick="showToast('Loading Chairs & Lamps...')">Lamps & Sofas</span>
+                        <span class="floor-tab" onclick="showToast('Loading Kitchen essentials...')">Kitchen Essentials</span>
+                    </div>
+                    <div class="floor-product-grid" id="home-grid">
+                        <!-- Loaded via Javascript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Brands Directory -->
+    <section class="section-container" id="brands-section">
+        <div class="section-header">
+            <div class="section-title-wrapper">
+                <span class="section-label">PARTNERS</span>
+                <h2 class="section-title">Luxury Partner Directory</h2>
+            </div>
+        </div>
+        <div class="brands-row">
+            <div class="brand-card">GUCCI</div>
+            <div class="brand-card">SONY</div>
+            <div class="brand-card">APPLE</div>
+            <div class="brand-card">NIKE</div>
+            <div class="brand-card">ZARA</div>
+            <div class="brand-card">WEST ELM</div>
+        </div>
+    </section>
+
+    <!-- Trending Collections -->
+    <section class="section-container" id="collections-section">
+        <div class="section-header">
+            <div class="section-title-wrapper">
+                <span class="section-label">LOOKBOOKS</span>
+                <h2 class="section-title">Trending Atrium Collections</h2>
+            </div>
+        </div>
+        <div class="collections-grid">
+            <div class="collection-banner" onclick="showToast('Loading Cozy Modernism Collection...')">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80" alt="Cozy Interior Decor" class="hero-img-bg">
+                <div class="collection-overlay">
+                    <h3>Cozy Modernism</h3>
+                    <p>Subtle lighting tones, premium oak woods, and high textured fabrics.</p>
+                    <span class="hero-side-link">View Lookbook &rarr;</span>
+                </div>
+            </div>
+            <div class="collection-banner" onclick="showToast('Loading Streetwear Statement Collection...')">
+                <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?w=1000&auto=format&fit=crop&q=80" alt="Active Sport Wear" class="hero-img-bg">
+                <div class="collection-overlay">
+                    <h3>Streetwear Statements</h3>
+                    <p>Clean leather court sneakers, double-breasted coats, and tailored essentials.</p>
+                    <span class="hero-side-link">View Lookbook &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Shop With Us (Trust Badges) -->
+    <section class="section-container" id="trust-section">
+        <div class="trust-grid">
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <h4>Fast Delivery</h4>
+                <p>Same day delivery available on select floor packages.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <h4>Secure Payments</h4>
+                <p>Fully certified encryption for transactions.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 8H18.5"/></svg>
+                </div>
+                <h4>Easy Returns</h4>
+                <p>Self-service portal with zero collection charges.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+                </div>
+                <h4>Authentic Products</h4>
+                <p>Official partner boutique authenticity check.</p>
+            </div>
+            <div class="trust-card">
+                <div class="trust-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </div>
+                <h4>24/7 Concierge</h4>
+                <p>Live mall assistance whenever you shop.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Promotion Section -->
+    <section class="section-container" id="app-promo-section">
+        <div class="app-promo-container">
+            <div class="app-promo-info">
+                <h2>Download Atrium Mall App</h2>
+                <p>Gain access to interactive digital directories, early lookbooks, active discount tickets, and fast mobile checkouts.</p>
+                <div class="app-features">
+                    <div class="app-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Track Real-Time Orders
+                    </div>
+                    <div class="app-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Exclusive App Coupons
+                    </div>
+                    <div class="app-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        1-Click Checkout
+                    </div>
+                    <div class="app-feature">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        Interactive Floor Map
+                    </div>
+                </div>
+                <div class="app-download-btns">
+                    <a href="#" class="app-btn" onclick="event.preventDefault(); showToast('Downloading from App Store...')">App Store</a>
+                    <a href="#" class="app-btn" onclick="event.preventDefault(); showToast('Downloading from Google Play Store...')">Google Play</a>
+                </div>
+            </div>
+            <div class="app-mockup">
+                <div class="phone-mockup">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&auto=format&fit=crop&q=80" alt="Mobile App Screen" class="phone-screen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section class="section-container" id="reviews-section">
+        <div class="section-header">
+            <div class="section-title-wrapper">
+                <span class="section-label">COMMUNITY</span>
+                <h2 class="section-title">What Visitors Say</h2>
+            </div>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-user-row">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&auto=format&fit=crop&q=80" alt="Avatar" class="user-avatar">
+                    <div>
+                        <h4 class="user-name">Sarah Jenkins</h4>
+                        <span class="user-title">Atrium Gold Member</span>
+                    </div>
+                </div>
+                <p class="review-text">"The digital mall floor layouts are incredible! It's refreshing to browse curated collections instead of scrolling through endless search results. Fast delivery came in within 4 hours."</p>
+            </div>
+            <div class="review-card">
+                <div class="review-user-row">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Avatar" class="user-avatar">
+                    <div>
+                        <h4 class="user-name">Marcus Vance</h4>
+                        <span class="user-title">Verified Buyer</span>
+                    </div>
+                </div>
+                <p class="review-text">"Bought my noise-cancelling headphones here during the Flash Deals. Excellent support and premium shopping experience all around."</p>
+            </div>
+            <div class="review-card">
+                <div class="review-user-row">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&auto=format&fit=crop&q=80" alt="Avatar" class="user-avatar">
+                    <div>
+                        <h4 class="user-name">Emma Watson</h4>
+                        <span class="user-title">Design Critic</span>
+                    </div>
+                </div>
+                <p class="review-text">"Finally a marketplace design that doesn't feel cheap or messy. Layouts are clean, colors are perfect. It feels like walking through a luxury shopping mall."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter (Shopping Club) -->
+    <section class="section-container" id="newsletter-section">
+        <div class="newsletter-banner">
+            <div class="newsletter-content">
+                <h2>Join Our Atrium Shopping Club</h2>
+                <p>Sign up to receive private floor collections, member event notices, reward vouchers, and early access sales notifications.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('Thank you for joining the Club! Check your inbox for rewards.');">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="newsletter-btn">Join Club</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer" id="main-footer">
+        <div class="section-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>ATRIUM<span>MALL</span></h3>
+                    <p>Premium digital shopping mall presenting luxury brands, dedicated floors, interactive services, and concierge care. Everything under one roof.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon">F</a>
+                        <a href="#" class="social-icon">I</a>
+                        <a href="#" class="social-icon">T</a>
+                        <a href="#" class="social-icon">Y</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Shop Floors</h4>
+                    <ul>
+                        <li><a href="#fashion-floor">Fashion Avenue</a></li>
+                        <li><a href="#electronics-floor">Tech World</a></li>
+                        <li><a href="#home-floor">Home Living</a></li>
+                        <li><a href="#dept-section">Beauty Hub</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Concierge Care</h4>
+                    <ul>
+                        <li><a href="#" onclick="event.preventDefault(); openInfoPage('contact')">Support & Contact</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openInfoPage('returns')">Refund & Return Policy</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openInfoPage('privacy')">Terms & Privacy Policy</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openInfoPage('about')">About Atrium</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Corporate</h4>
+                    <ul>
+                        <li><a href="#" onclick="event.preventDefault(); openInfoPage('about')">Our Story</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); showToast('Careers portal is coming soon...')">Careers</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); showToast('Boutique applications are currently closed.')">Boutique Partners</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Security Badges</h4>
+                    <ul>
+                        <li><a href="#">PCI-DSS Compliant</a></li>
+                        <li><a href="#">Secure SSL 256bit</a></li>
+                        <li><a href="#">Fraud Protection</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    &copy; 2026 Atrium Mall. All rights reserved. Designed for immersive online marketplace experiences.
+                </div>
+                <div class="footer-badges">
+                    <span style="font-size: 0.85rem; font-weight: 700; opacity: 0.6;">VISA | MASTERCARD | AMEX | APPLE PAY</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation Bar -->
+    <div class="mobile-nav-bar" id="mobile-nav-bar">
+        <div class="mobile-nav-container">
+            <a href="#hero-section" class="mobile-nav-item active">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                Home
+            </a>
+            <a href="#dept-section" class="mobile-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/></svg>
+                Departments
+            </a>
+            <a href="#deals-section" class="mobile-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm-2 4h4m-4 4h4"/></svg>
+                Deals
+            </a>
+            <a href="#" class="mobile-nav-item" onclick="event.preventDefault(); document.getElementById('drawer-cart').classList.add('open')">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                Cart
+            </a>
+        </div>
+    </div>
+
+    <!-- Cart Drawer -->
+    <div class="drawer" id="drawer-cart">
+        <div class="drawer-header">
+            <span class="drawer-title">Shopping Cart</span>
+            <button class="btn-close-drawer" id="btn-close-cart">&times;</button>
+        </div>
+        <div class="drawer-content" id="cart-items-list">
+            <div class="empty-cart-msg">Your shopping cart is empty.</div>
+        </div>
+        <div class="drawer-footer">
+            <div class="subtotal-row">
+                <span>Subtotal:</span>
+                <span id="cart-subtotal">$0.00</span>
+            </div>
+            <button class="btn-checkout" onclick="showToast('Processing checkout...')">Proceed To Checkout</button>
+        </div>
+    </div>
+
+    <!-- Quick View Modal Overlay -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" id="btn-close-modal">&times;</button>
+            <div id="modal-dynamic-content">
+                <!-- Javascript loads here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- System Notification Toast Container -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
