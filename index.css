@@ -1782,23 +1782,30 @@ img {
     box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
     z-index: 100;
     height: 64px;
+    width: 100%;
 }
 
 .mobile-nav-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
+    width: 100%;
+    padding: 0 8px;
 }
 
 .mobile-nav-item {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-size: 0.65rem;
     font-weight: 700;
     color: var(--text-muted);
     gap: 4px;
+    text-align: center;
+    min-width: 0;
 }
 
 .mobile-nav-item.active {
@@ -1851,6 +1858,10 @@ img {
     }
     .app-mockup {
         display: none;
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
     }
 }
 
@@ -1936,5 +1947,9 @@ img {
     }
     .modal-gallery {
         height: 240px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
